@@ -22,6 +22,7 @@ jobs:
         with:
           root_file: resume.tex
           latexmk_use_xelatex: false
+          args: -pdf -jobname=lana_gasparyan
 
       - name: Install Pandoc and Python tools
         run: |
@@ -38,7 +39,7 @@ jobs:
             # Check if versions directory exists and has files
             if [ -d "versions" ] && [ "$(ls -A versions)" ]; then
               # Get the latest version from the versions directory
-              LATEST_VERSION=$(ls -1 versions/puneet_ludu_v*.pdf | sort -V | tail -n 1 | grep -oP 'v\K[0-9]+\.[0-9]+')
+              LATEST_VERSION=$(ls -1 versions/lana_gasparyan_v*.pdf | sort -V | tail -n 1 | grep -oP 'v\K[0-9]+\.[0-9]+')
               
               # Extract major and minor version
               MAJOR=$(echo $LATEST_VERSION | cut -d. -f1)
@@ -70,9 +71,9 @@ jobs:
 
       - name: Save versioned PDF
         run: |
-          cp resume.pdf "versions/puneet_ludu_v${{ env.VERSION }}.pdf"
+          cp lana_gasparyan.pdf "versions/lana_gasparyan_v${{ env.VERSION }}.pdf"
           # Also copy to root as latest version
-          cp resume.pdf "puneet_ludu_resume_latest.pdf"
+          cp lana_gasparyan.pdf "lana_gasparyan_resume_latest.pdf"
 
       - name: Convert LaTeX to Markdown and clean up
         env:
@@ -87,14 +88,14 @@ jobs:
       - name: Create README.md with Markdown content and PDF link
         run: |
           # Extract basic information from LaTeX file
-          NAME=$(grep -oP '\\textbf{\\color{namecolor}Puneet Ludu}' resume.tex | sed 's/\\textbf{\\color{namecolor}//g' | sed 's/}//g')
+          NAME=$(grep -oP '\\textbf{\\color{namecolor}Lana Gasparyan}' resume.tex | sed 's/\\textbf{\\color{namecolor}//g' | sed 's/}//g')
 
           # Create README content
           cat > README.md << EOF
           # $NAME's Resume
 
           ##### Latest Version: v${{ env.VERSION }} 
-          [![Resume PDF](https://img.shields.io/badge/Resume-PDF-blue.svg)](puneet_ludu_resume_latest.pdf)
+          [![Resume PDF](https://img.shields.io/badge/Resume-PDF-blue.svg)](lana_gasparyan_resume_latest.pdf)
 
           ## Resume in Markdown
 
@@ -102,8 +103,8 @@ jobs:
 
           ## Download Options
 
-          - [Download Latest PDF](puneet_ludu_resume_latest.pdf)
-          - [View on GitHub](https://github.com/puneetsl/resume/blob/main/puneet_ludu_resume_latest.pdf)
+          - [Download Latest PDF](lana_gasparyan_resume_latest.pdf)
+          - [View on GitHub](https://github.com/lanagasparyan/resume/blob/main/lana_gasparyan_resume_latest.pdf)
 
           ## Previous Versions
 
@@ -119,8 +120,8 @@ jobs:
         with:
           name: resume-pdf
           path: |
-            puneet_ludu_resume_latest.pdf
-            versions/puneet_ludu_v${{ env.VERSION }}.pdf
+            lana_gasparyan_resume_latest.pdf
+            versions/lana_gasparyan_v${{ env.VERSION }}.pdf
           retention-days: 30
 
       - name: Upload README artifact
@@ -135,8 +136,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            puneet_ludu_resume_latest.pdf
-            versions/puneet_ludu_v${{ env.VERSION }}.pdf
+            lana_gasparyan_resume_latest.pdf
+            versions/lana_gasparyan_v${{ env.VERSION }}.pdf
             README.md
           tag_name: v${{ env.VERSION }}
           name: Resume v${{ env.VERSION }}
@@ -151,6 +152,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add README.md RUNSTEPS.md puneet_ludu_resume_latest.pdf versions/
+          git add README.md RUNSTEPS.md lana_gasparyan_resume_latest.pdf versions/
           git commit -m "Update README and PDF for version ${{ env.VERSION }}" || echo "No changes to commit"
           git push
