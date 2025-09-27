@@ -104,21 +104,20 @@
     \if\relax\detokenize{#2}\relax\else\textit{#2}, \fi%
     \if\relax\detokenize{#3}\relax\else\textbf{#3}, \fi%
     \if\relax\detokenize{#4}\relax\else#4\fi%
-    \if\relax\detokenize{#5}\relax\else\hfill\yearsright{#5}\fi\\[-2pt]
-}{\vspace{-1pt}}
+    \if\relax\detokenize{#5}\relax\else\hfill\yearsright{#5}\fi\\[-6pt]
+}{\vspace{-3pt}}
 
 % Project entry with indentation and hierarchical structure
 \newenvironment{projectentry}{%
-    \leftskip=0.5cm
+    \leftskip=0cm
     \par\noindent
 }{\par\leftskip=0cm\vspace{-2pt}}
 
 % Project description with deeper indentation
 \newenvironment{projectdesc}{%
-    \leftskip=1.0cm
     \footnotesize
-    \par\noindent
-}{\par\leftskip=0cm\smallersection\vspace{-3pt}}
+    \begin{itemize}[leftmargin=*, topsep=0pt, itemsep=1pt, parsep=0pt]
+}{\end{itemize}\smallersection\vspace{-1pt}}
 
 % Link with icon
 \newcommand{\iconlink}[3]{%
@@ -147,15 +146,15 @@
     \footnotesize\iconlink{\faBriefcase}{https://www.upwork.com/freelancers/~lanagasparyan}{UpWork}
 \end{minipage}
 
-\vspace{0mm}
+\vspace{-1mm}
 \noindent\rule{\textwidth}{0.4pt}
-\vspace{-2mm}
+\vspace{-4mm}
 
 % Summary section
 \sectionbox{Summary}
 \smallersection
 
-\noindent I'm a driven Software Developer with over 3 years of experience in Python, Flask, and AWS. Currently in my last semester of a Bachelor's in Software Engineering, I have honed my skills in full stack development and gained experience in machine learning and prompt engineering. I am an AWS Certified Cloud Practitioner and hold CompTIA Project+ and ITIL® Foundation Certificates.
+\noindent Full-stack Software Engineer with \textbf{3+ years} of experience building scalable web applications and cloud infrastructure. Proven expertise in designing RESTful APIs, implementing secure authentication systems, and deploying containerized applications to AWS. Strong foundation in machine learning and AI integration, with hands-on experience leveraging LLMs for innovative solutions. AWS Certified Cloud Practitioner with demonstrated ability to deliver end-to-end software solutions from concept to production.
 
 \normalsizesection
 
@@ -163,7 +162,7 @@
 \sectionbox{Education}
 \smallersection
 
-\noindent\textbf{Bachelor of Science} in Software Engineering, Western Governors University, Millcreek, UT \hfill 2021-2025 (expected)
+\noindent\textbf{Bachelor of Science} in Software Engineering, Western Governors University, Millcreek, UT \hfill Sep 2025
 
 \vspace{-1pt}
 \noindent\textbf{Front End Web Developer NanoDegree}, Udacity \hfill 2020
@@ -178,10 +177,9 @@
 \smallersection
 
 \begin{tabularx}{\textwidth}{@{} l X @{}}
-\textbf{Adept} & Python, HTML \\[2pt]
-\textbf{Working Knowledge} & C++, Java, Javascript, CSS, SQL, BASH \\[2pt]
-\textbf{Languages} & Python, HTML, C++, Java, Javascript, CSS, SQL, BASH \\[2pt]
-\textbf{Frameworks and Tools} & Flask, Git, VS code, Node.js, Django, GitHub, AWS
+\textbf{Languages} & Python (Adept), Java, JavaScript, HTML/CSS, SQL, C++, Bash \\[2pt]
+\textbf{Frameworks} & Spring Boot, Flask, React, Node.js, Django, Jekyll \\[2pt]
+\textbf{Tools \& Cloud} & AWS (S3, CloudFront, Route 53), PostgreSQL, Git, Docker, JWT, VS Code
 \end{tabularx}
 
 \normalsizesection
@@ -191,62 +189,48 @@
 \smallersection
 
 \begin{projectentry}
-    \projicon{\faGlobe} \textbf{MemoDiction.com} \tech{Jekyll, Bootstrap, Python, OpenAI ChatGPT API, JavaScript, HTML, GitHub Actions}
+    \projicon{\faRobot} \textbf{Skill Quest: AI Learning Planner} \tech{Java, Spring Boot, React, PostgreSQL, JWT, LLM API}
 \end{projectentry}
-
 \begin{projectdesc}
-    • Developed an innovative dictionary website to improve word retention, featuring mnemonic aids, etymology, idiomatic expressions, and more.\\[1pt]
-    • Used OpenAI's API and prompt engineering with python to create Mnemonics, Misconceptions etc. Automatically for a word
+    \item Designed and deployed full-stack application providing AI-generated learning roadmaps for self-directed education
+    \item Built secure \textbf{RESTful API} with Spring Boot featuring \textbf{JWT authentication} and PostgreSQL database
+    \item Integrated LLM API for dynamic curricula generation; created responsive React UI with progress tracking
 \end{projectdesc}
 
 \begin{projectentry}
-    \projicon{\faCalculator} \textbf{BinaryDecimal.com} \tech{Node.js, React, Vite, Tailwind CSS, Netlify}
+    \projicon{\faCalculator} \textbf{BinaryDecimal.com - Multi-Purpose Toolkit} \tech{React, JavaScript, Vite, Tailwind CSS}
 \end{projectentry}
-
 \begin{projectdesc}
-    • A web application featuring a collection of useful markdown editor, calculators, including scientific, base conversion, mortgage, and physics unit converters, along with a blog and notepad functionality.
+    \item Built comprehensive web toolkit with \textbf{17+ utilities} (calculators, converters, productivity tools) serving \textbf{40K+ users annually}
+    \item Implemented complex algorithms for financial calculations, scientific conversions, and health metrics (BMI, A1C)
+    \item Achieved \textbf{100\% client-side processing} for privacy and speed; deployed as progressive web app
 \end{projectdesc}
 
 \begin{projectentry}
-    \projicon{\faCloud} \textbf{Travel Weather and Cooking Blog Websites - Hosted on AWS} \tech{Node, HTML, CSS, Javascript, Web design}
+    \projicon{\faGlobe} \textbf{MemoDiction.com} \tech{Jekyll, Python, OpenAI API, GitHub Actions}
 \end{projectentry}
-
 \begin{projectdesc}
-    • Built static websites to provide travel booking services and publish cooking blog posts using Node.js, HTML, CSS, and JavaScript, to learn all these technologies and end to end hosting and management using AWS\\[1pt]
-    • Converted the website to a static website and hosted it on AWS S3 with CloudFront for fast content delivery\\[1pt]
-    • Learnt Other AWS technologies such as Route 53 for domain name management, CloudWatch for monitoring and Certificate Manager for configuring SSL certificates
+    \item Developed dictionary website with AI-generated mnemonics serving \textbf{25K+ users annually} for vocabulary retention
+    \item Leveraged OpenAI API with prompt engineering to automatically generate learning aids and etymology insights
 \end{projectdesc}
 
 \begin{projectentry}
-    \projicon{\faSearch} \textbf{Yelp Fake Review Detector} \tech{Python, Scikit-learn}
+    \projicon{\faBriefcase} \textbf{Freelance Development Projects} \tech{Python, Data Processing, File Conversion}
 \end{projectentry}
-
 \begin{projectdesc}
-    • Developed a machine learning model using Python and Scikit-learn to detect fake reviews on Yelp\\[1pt]
-    • Implemented feature engineering techniques and model evaluation metrics to improve accuracy to 0.89\\[1pt]
-    • Learned and applied principles of natural language processing and machine learning to achieve a high accuracy rate in detecting fake reviews. The precision score was 0.84, the recall score was 0.94, and the F1 score was 0.89.
+    \item Developed Python scripts for \textbf{NetCDF scientific data} merging and analysis for research clients
+    \item Created automated Markdown to ENEX converter supporting complex formatting and metadata preservation
 \end{projectdesc}
 
-\normalsizesection
 
-% Work Experience section
-\sectionbox{Work Experience}
-\smallersection
-
-\begin{resumeentry}{Freelance Software Developer}{Jan 2024 – Present}{UpWork}{\href{https://www.upwork.com/freelancers/~lanagasparyan}{Profile link}}{}
-\end{resumeentry}
-
+\begin{projectentry}
+    \projicon{\faSearch} \textbf{Yelp Fake Review Detector} \tech{Python, Scikit-learn, NLP}
+\end{projectentry}
 \begin{projectdesc}
-    • Developed Python scripts for NetCDF file merging and converted Markdown to ENEX, showcasing skills in data manipulation and file format conversion.
+    \item Built ML model detecting fake reviews with \textbf{89\% accuracy} using feature engineering and NLP
+    \item Achieved \textbf{precision: 0.84, recall: 0.94, F1: 0.89} through systematic model optimization
 \end{projectdesc}
 
-\begin{resumeentry}{Medical Assistant}{Jun 2016 – Oct 2017}{Accredited Dermatology}{Brooklyn}{}
-\end{resumeentry}
-
-\begin{projectdesc}
-    • Implemented an automated appointment confirmation system using Google Sheets, Google Calendar, and Google Apps Script, enhancing office efficiency and data management.\\[1pt]
-    • Streamlined patient intake and discharge processes, improving patient experience and reducing time by 20\% through meticulous analysis of insurance benefits and records.
-\end{projectdesc}
 
 \normalsizesection
 
@@ -274,8 +258,8 @@
 \normalsizesection
 
 \vspace{3pt}
-\begin{center}
+\begin{flushright}
 \textit{Authorised to work in the United States as a Permanent Resident}
-\end{center}
+\end{flushright}
 
 \end{document}
