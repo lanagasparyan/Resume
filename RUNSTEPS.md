@@ -99,5 +99,3 @@ This resume template is available for personal use. Please do not redistribute o
 ## Contact
 
 For any questions or suggestions, please reach out to me at puneet.ludu@gmail.com
-
-# Test
