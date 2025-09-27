@@ -1,11 +1,11 @@
 .PHONY: all clean
 
-all: resume.pdf
+all: lana_gasparyan.pdf
 
-resume.pdf: resume.tex
-	latexmk -pdf resume.tex
+lana_gasparyan.pdf: resume.tex
+	latexmk -pdf -jobname=lana_gasparyan resume.tex
 
 clean:
-	latexmk -C
+	latexmk -C -jobname=lana_gasparyan
 	rm -f *.pdf
 	rm -f *.aux *.log *.out *.fls *.fdb_latexmk *.synctex.gz 
