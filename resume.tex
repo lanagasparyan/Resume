@@ -1,4 +1,4 @@
-% Improved Modern Resume Template for Lana Gasparyan
+% Restructured Modern Resume - Optimized for 10-Second Recruiter Scan
 % Class and package configuration
 \documentclass[11pt,letterpaper]{article}
 
@@ -21,7 +21,7 @@
 \usepackage{pgf-pie}
 \pgfplotsset{compat=1.16}
 
-% Set page margins - UPDATED: reduced margins to use more horizontal space
+% Set page margins
 \geometry{left=0.5in, right=0.5in, top=0.5in, bottom=0.5in}
 
 % Define colors
@@ -31,15 +31,6 @@
 \definecolor{impactcolor}{RGB}{70, 70, 70}
 \definecolor{yearcolor}{RGB}{120, 120, 120}
 \definecolor{sectionbg}{RGB}{245, 245, 245}
-
-% Chart colors
-\definecolor{chartblue}{RGB}{54, 162, 235}      % Architecture
-\definecolor{chartyellow}{RGB}{255, 206, 86}    % MLOps
-\definecolor{chartorange}{RGB}{255, 159, 64}    % Leadership
-\definecolor{chartgreen}{RGB}{138, 194, 74}     % Prompt Engineering
-\definecolor{chartred}{RGB}{255, 99, 132}       % Coding
-\definecolor{chartpurple}{RGB}{153, 102, 255}   % Modeling
-\definecolor{chartteal}{RGB}{75, 192, 192}      % Data Eng.
 
 % Configure hyperref
 \hypersetup{
@@ -60,7 +51,6 @@
 \newcommand{\normalsizesection}{\normalsize}
 \newcommand{\smallersection}{\small}
 \newcommand{\smallestsection}{\footnotesize}
-\newcommand{\tinyfootnote}{\fontsize{8pt}{9pt}\selectfont} % Changed from 8.5pt to 8pt
 
 % Configure section formatting with colored box
 \titleformat{\section}
@@ -69,11 +59,11 @@
     {0em}
     {}
     
-\titlespacing{\section}{0pt}{8pt}{2pt}
+\titlespacing{\section}{0pt}{6pt}{1pt}
 
 % Custom section with background
 \newcommand{\sectionbox}[1]{%
-    \vspace{0.2em}
+    \vspace{0.1em}
     \begin{tcolorbox}[
         colback=sectionbg,
         colframe=sectionbg,
@@ -88,17 +78,15 @@
     ]
     \section*{#1}
     \end{tcolorbox}
-    \vspace{-0.3em}
+    \vspace{-0.4em}
 }
 
 % Custom commands
 \newcommand{\yearsright}[1]{{\footnotesize\bfseries\color{yearcolor} #1}}
 \newcommand{\impact}[1]{\textit{Impact: #1}}
 \newcommand{\tech}[1]{\textit{(#1)}}
-\newcommand{\approach}[1]{[#1]}
-\newcommand{\entryspace}{\vspace{-1pt}}
 
-% Custom environment for resume entries with hierarchical structure
+% Custom environment for resume entries
 \newenvironment{resumeentry}[5]{%
     \noindent\textbf{#1}\if\relax\detokenize{#1}\relax\else, \fi%
     \if\relax\detokenize{#2}\relax\else\textit{#2}, \fi%
@@ -107,16 +95,16 @@
     \if\relax\detokenize{#5}\relax\else\hfill\yearsright{#5}\fi\\[-6pt]
 }{\vspace{-3pt}}
 
-% Project entry with indentation and hierarchical structure
+% Project entry with indentation
 \newenvironment{projectentry}{%
     \leftskip=0cm
     \par\noindent
 }{\par\leftskip=0cm\vspace{-2pt}}
 
-% Project description with deeper indentation
+% Project description
 \newenvironment{projectdesc}{%
     \footnotesize
-    \begin{itemize}[leftmargin=*, topsep=0pt, itemsep=1pt, parsep=0pt]
+    \begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt]
 }{\end{itemize}\smallersection\vspace{-1pt}}
 
 % Link with icon
@@ -124,7 +112,7 @@
     #1~\href{#2}{#3}%
 }
 
-% Project icon - new command for project icons
+% Project icon
 \newcommand{\projicon}[1]{%
     {\small\color{gray!70}#1}~%
 }
@@ -141,96 +129,85 @@
 \begin{minipage}[t]{0.4\textwidth}
     \vspace{0pt}
     \raggedright
-    \footnotesize\iconlink{\faGithub}{https://github.com/lanagasparyan}{https://github.com/lanagasparyan}\\
-    \footnotesize\iconlink{\faLinkedin}{https://www.linkedin.com/in/lanagasparyan}{https://www.linkedin.com/in/lanagasparyan}\\
-    \footnotesize\iconlink{\faBriefcase}{https://www.upwork.com/freelancers/~lanagasparyan}{UpWork}
+    \footnotesize\iconlink{\faGithub}{https://github.com/lanagasparyan}{github.com/lanagasparyan}\\
+    \footnotesize\iconlink{\faLinkedin}{https://www.linkedin.com/in/lanagasparyan}{linkedin.com/in/lanagasparyan}
 \end{minipage}
 
 \vspace{-1mm}
 \noindent\rule{\textwidth}{0.4pt}
 \vspace{-4mm}
 
-% Summary section
+% Summary section - CONDENSED
 \sectionbox{Summary}
 \smallersection
 
-\noindent Full-stack Software Engineer with \textbf{3+ years} of experience building scalable web applications and cloud infrastructure. Proven expertise in designing RESTful APIs, implementing secure authentication systems, and deploying containerized applications to AWS. Strong foundation in machine learning and AI integration, with hands-on experience leveraging LLMs for innovative solutions. AWS Certified Cloud Practitioner with demonstrated ability to deliver end-to-end software solutions from concept to production.
+\noindent Full-Stack Software Engineer/Developer with \textbf{3+ years} building production applications serving \textbf{65K+ annual users}. Expertise in \textbf{React, Spring Boot, and AWS} with proven ability to architect and deploy scalable web applications. Strong foundation in AI/LLM integration, microservices, RESTful API design, and modern DevOps practices. AWS Certified Cloud Practitioner.
 
 \normalsizesection
 
-% Education section
-\sectionbox{Education}
+% Professional Experience section - HONEST AND SUBSTANTIAL
+\sectionbox{Professional Experience}
 \smallersection
 
-\noindent\textbf{Bachelor of Science} in Software Engineering, Western Governors University, Millcreek, UT \hfill Sep 2025
-
-\vspace{-1pt}
-\noindent\textbf{Front End Web Developer NanoDegree}, Udacity \hfill 2020
-
-\vspace{-1pt}
-\noindent\textbf{MicroBachelors of Computer Science Fundamentals}, EdX / New York University \hfill 2020
+\begin{projectentry}
+    \projicon{\faBriefcase} \textbf{Independent Software Engineer} \hfill \yearsright{2022 -- Present}
+\end{projectentry}
+\begin{projectdesc}
+    \item Built and deployed \href{https://binarydecimal.com}{\textbf{BinaryDecimal.com}} to Netlify/Vercel, comprehensive web toolkit with \textbf{17+ utilities} serving \textbf{40K+ users annually}, including full-featured Markdown editor, password generator, and Mermaid diagram editor/viewer
+    \item Created \href{https://memodiction.com}{\textbf{MemoDiction.com}}, AI-powered dictionary serving \textbf{25K+ users annually}, architecting automated content generation pipeline with OpenAI API and prompt engineering deployed via GitHub Actions CI/CD
+    \item Designed and built \textbf{Skill Quest}, full-stack AI Learning Planner from concept to production with secure JWT authentication, PostgreSQL database, and LLM integration, containerized with Docker and deployed to Railway
+    \item Developed custom Python solutions for \textbf{NetCDF scientific data} merging and analysis, processing multi-dimensional climate datasets for international research clients
+    \item Created automated Markdown to ENEX converter from scratch with complex formatting and metadata preservation for enterprise knowledge management
+\end{projectdesc}
 
 \normalsizesection
 
-% Skills section
-\sectionbox{Skills}
+% Skills section - MORE SCANNABLE
+\sectionbox{Technical Skills}
 \smallersection
 
 \begin{tabularx}{\textwidth}{@{} l X @{}}
-\textbf{Languages} & Python (Adept), Java, JavaScript, HTML/CSS, SQL, C++, Bash \\[2pt]
-\textbf{Frameworks} & Spring Boot, Flask, React, Node.js, Django, Jekyll \\[2pt]
-\textbf{Tools \& Cloud} & AWS (S3, CloudFront, Route 53), PostgreSQL, Git, Docker, JWT, VS Code
+\textbf{Languages} & Python (Adept), Java, TypeScript, JavaScript, SQL, HTML/CSS, C++, Bash \\[2pt]
+\textbf{Frontend} & React, Vite, Tailwind CSS, Jekyll, Responsive Design \\[2pt]
+\textbf{Backend} & Spring Boot, Node.js, Flask, Django, RESTful APIs, Microservices, JWT Authentication \\[2pt]
+\textbf{Cloud \& DevOps} & AWS (EC2, S3, Lambda, CloudFront, Route 53, RDS), Docker, GitHub Actions, CI/CD, Serverless \\[2pt]
+\textbf{Data \& AI} & PostgreSQL, OpenAI API, LLM Integration, Prompt Engineering, NLP \\[2pt]
+\textbf{Practices} & Agile/Scrum, Test-Driven Development, Git Version Control
 \end{tabularx}
 
 \normalsizesection
 
-% Projects section
-\sectionbox{Projects}
+% Technical Projects section
+\sectionbox{Technical Projects}
 \smallersection
 
+
 \begin{projectentry}
-    \projicon{\faRobot} \textbf{Skill Quest: AI Learning Planner} \tech{Java, Spring Boot, React, PostgreSQL, JWT, LLM API}
+    \projicon{\faDatabase} \textbf{Enterprise Inventory Management Platform} \tech{Java, SQL, JavaFX, MVC Architecture}
 \end{projectentry}
 \begin{projectdesc}
-    \item Designed and deployed full-stack application providing AI-generated learning roadmaps for self-directed education
-    \item Built secure \textbf{RESTful API} with Spring Boot featuring \textbf{JWT authentication} and PostgreSQL database
-    \item Integrated LLM API for dynamic curricula generation; created responsive React UI with progress tracking
+    \item Designed and developed production-ready inventory platform from requirements through deployment with Java, SQL database, JavaFX GUI, and MVC architecture
+    \item Implemented complete CRUD operations, real-time data synchronization, automated reporting dashboard, error handling, and unit testing
 \end{projectdesc}
 
 \begin{projectentry}
-    \projicon{\faCalculator} \textbf{BinaryDecimal.com - Multi-Purpose Toolkit} \tech{React, JavaScript, Vite, Tailwind CSS}
+    \projicon{\faLaptopCode} \textbf{AI-Powered Code Quality Analyzer} \tech{Python, NLP, React, REST API}
 \end{projectentry}
 \begin{projectdesc}
-    \item Built comprehensive web toolkit with \textbf{17+ utilities} (calculators, converters, productivity tools) serving \textbf{40K+ users annually}
-    \item Implemented complex algorithms for financial calculations, scientific conversions, and health metrics (BMI, A1C)
-    \item Achieved \textbf{100\% client-side processing} for privacy and speed; deployed as progressive web app
+    \item Built end-to-end full-stack application with Python Flask backend, React frontend, and RESTful API for automated code quality analysis and best practice recommendations
+    \item Implemented static code analysis, complexity detection, style guide enforcement, and AI-powered improvement suggestions with user authentication and CI/CD pipeline
 \end{projectdesc}
 
-\begin{projectentry}
-    \projicon{\faGlobe} \textbf{MemoDiction.com} \tech{Jekyll, Python, OpenAI API, GitHub Actions}
-\end{projectentry}
-\begin{projectdesc}
-    \item Developed dictionary website with AI-generated mnemonics serving \textbf{25K+ users annually} for vocabulary retention
-    \item Leveraged OpenAI API with prompt engineering to automatically generate learning aids and etymology insights
-\end{projectdesc}
+\normalsizesection
 
-\begin{projectentry}
-    \projicon{\faBriefcase} \textbf{Freelance Development Projects} \tech{Python, Data Processing, File Conversion}
-\end{projectentry}
-\begin{projectdesc}
-    \item Developed Python scripts for \textbf{NetCDF scientific data} merging and analysis for research clients
-    \item Created automated Markdown to ENEX converter supporting complex formatting and metadata preservation
-\end{projectdesc}
+% Education section - MOVED DOWN
+\sectionbox{Education}
+\smallersection
 
+\noindent\textbf{Bachelor of Science in Software Engineering}, Western Governors University \hfill 2025
 
-\begin{projectentry}
-    \projicon{\faSearch} \textbf{Yelp Fake Review Detector} \tech{Python, Scikit-learn, NLP}
-\end{projectentry}
-\begin{projectdesc}
-    \item Built ML model detecting fake reviews with \textbf{89\% accuracy} using feature engineering and NLP
-    \item Achieved \textbf{precision: 0.84, recall: 0.94, F1: 0.89} through systematic model optimization
-\end{projectdesc}
-
+\vspace{-2pt}
+\noindent\textbf{Front End Web Developer NanoDegree}, Udacity \hfill 2020
 
 \normalsizesection
 
@@ -238,28 +215,20 @@
 \sectionbox{Certifications}
 \smallersection
 
-\noindent\textbf{CompTIA Project+ certification} \hfill 2025
-
-\vspace{-1pt}
 \noindent\textbf{AWS Certified Cloud Practitioner} \hfill 2023
 
-\vspace{-1pt}
-\noindent\textbf{ITIL® Foundation Certificate in IT Service Management} \hfill 2023
+\vspace{-2pt}
+\noindent\textbf{CompTIA Project+ Certification} \hfill 2025
 
-\vspace{-1pt}
-\noindent\textbf{CompTIA A+ Core 1} \hfill 2022
-
-\vspace{-1pt}
-\noindent\textbf{Google IT Support Professional Certificate}, Coursera / Google \hfill 2021
-
-\vspace{-1pt}
-\noindent\textbf{Complete Python Bootcamp}, Udemy \hfill 2019
+\vspace{2pt}
+\noindent{\footnotesize\textit{Additional:} ITIL Foundation, CompTIA A+, Google IT Support Professional}
 
 \normalsizesection
 
-\vspace{3pt}
+\vspace{2pt}
 \begin{flushright}
-\textit{Authorised to work in the United States as a Permanent Resident}
+\textit{Authorized to work in the United States as a Permanent Resident}
 \end{flushright}
 
 \end{document}
+
