@@ -1,6 +1,6 @@
 % Restructured Modern Resume - Optimized for 10-Second Recruiter Scan
 % Class and package configuration
-\documentclass[11pt,letterpaper]{article}
+\documentclass[12pt,letterpaper]{article}
 
 % Packages
 \usepackage[utf8]{inputenc}
@@ -22,7 +22,7 @@
 \pgfplotsset{compat=1.16}
 
 % Set page margins
-\geometry{left=0.5in, right=0.5in, top=0.5in, bottom=0.5in}
+\geometry{left=0.5in, right=0.5in, top=0.4in, bottom=0.4in}
 
 % Define colors
 \definecolor{namecolor}{RGB}{50, 50, 50}
@@ -59,7 +59,7 @@
     {0em}
     {}
     
-\titlespacing{\section}{0pt}{6pt}{1pt}
+\titlespacing{\section}{0pt}{8pt}{2pt}
 
 % Custom section with background
 \newcommand{\sectionbox}[1]{%
@@ -105,7 +105,7 @@
 \newenvironment{projectdesc}{%
     \footnotesize
     \begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt]
-}{\end{itemize}\smallersection\vspace{-1pt}}
+}{\end{itemize}\smallersection\vspace{1pt}}
 
 % Link with icon
 \newcommand{\iconlink}[3]{%
@@ -141,7 +141,7 @@
 \sectionbox{Summary}
 \smallersection
 
-\noindent Full-Stack Software Engineer/Developer with \textbf{3+ years} building production applications serving \textbf{65K+ annual users}. Expertise in \textbf{React, Spring Boot, and AWS} with proven ability to architect and deploy scalable web applications. Strong foundation in AI/LLM integration, microservices, RESTful API design, and modern DevOps practices. AWS Certified Cloud Practitioner.
+\noindent Full-Stack Software Engineer with \textbf{3+ years} building production applications serving \textbf{65K+ annual users}. Expertise in \textbf{Python, RESTful API design, and backend systems} with hands-on experience across relational databases (PostgreSQL, SQL) and object databases. Proven ability to architect and deploy scalable web applications with strong foundation in AI/LLM integration, microservices, and modern DevOps practices. AWS Certified Cloud Practitioner.
 
 \normalsizesection
 
@@ -150,14 +150,21 @@
 \smallersection
 
 \begin{projectentry}
+    \projicon{\faBriefcase} \textbf{AI Expert Contributor: DevOps}, \textit{Snorkel AI} \textemdash{} Contract \hfill \yearsright{May 2026 -- Present}
+\end{projectentry}
+\begin{projectdesc}
+    \item Contributing domain expertise on \textbf{Claude Code Subagents and Agentic Workflows}; evaluating and rating AI-generated responses for technical accuracy and quality to support LLM fine-tuning
+    \item Producing high-quality training data for DevOps and AI tooling scenarios covering CI/CD pipelines, container orchestration, and multi-agent system design
+\end{projectdesc}
+
+\vspace{2pt}
+\begin{projectentry}
     \projicon{\faBriefcase} \textbf{Independent Software Engineer} \hfill \yearsright{2022 -- Present}
 \end{projectentry}
 \begin{projectdesc}
-    \item Built and deployed \href{https://binarydecimal.com}{\textbf{BinaryDecimal.com}} to Netlify/Vercel, comprehensive web toolkit with \textbf{17+ utilities} serving \textbf{40K+ users annually}, including full-featured Markdown editor, password generator, and Mermaid diagram editor/viewer
-    \item Created \href{https://memodiction.com}{\textbf{MemoDiction.com}}, AI-powered dictionary serving \textbf{25K+ users annually}, architecting automated content generation pipeline with OpenAI API and prompt engineering deployed via GitHub Actions CI/CD
-    \item Designed and built \textbf{Skill Quest}, full-stack AI Learning Planner from concept to production with secure JWT authentication, PostgreSQL database, and LLM integration, containerized with Docker and deployed to Railway
-    \item Developed custom Python solutions for \textbf{NetCDF scientific data} merging and analysis, processing multi-dimensional climate datasets for international research clients
-    \item Created automated Markdown to ENEX converter from scratch with complex formatting and metadata preservation for enterprise knowledge management
+    \item Built and deployed \href{https://binarydecimal.com}{\textbf{BinaryDecimal.com}}, web toolkit with \textbf{17+ utilities} serving \textbf{100K+ users annually} (Markdown editor, password generator, Mermaid diagram viewer)
+    \item Created \href{https://memodiction.com}{\textbf{MemoDiction.com}}, AI-powered dictionary serving \textbf{25K+ users annually} with automated content pipeline using OpenAI API and GitHub Actions CI/CD
+    \item Designed and built \textbf{Skill Quest}, full-stack AI Learning Planner with JWT auth, PostgreSQL, LLM integration, containerized with Docker and deployed to Railway
 \end{projectdesc}
 
 \normalsizesection
@@ -167,11 +174,11 @@
 \smallersection
 
 \begin{tabularx}{\textwidth}{@{} l X @{}}
-\textbf{Languages} & Python (Adept), Java, TypeScript, JavaScript, SQL, HTML/CSS, C++, Bash \\[2pt]
-\textbf{Frontend} & React, Vite, Tailwind CSS, Jekyll, Responsive Design \\[2pt]
-\textbf{Backend} & Spring Boot, Node.js, Flask, Django, RESTful APIs, Microservices, JWT Authentication \\[2pt]
-\textbf{Cloud \& DevOps} & AWS (EC2, S3, Lambda, CloudFront, Route 53, RDS), Docker, GitHub Actions, CI/CD, Serverless \\[2pt]
-\textbf{Data \& AI} & PostgreSQL, OpenAI API, LLM Integration, Prompt Engineering, NLP \\[2pt]
+\textbf{Languages} & \textbf{Python} (Adept), Java, TypeScript, JavaScript, SQL, HTML/CSS, C++, Bash \\[4pt]
+\textbf{Frontend} & React, Vite, Tailwind CSS, Jekyll, Responsive Design \\[4pt]
+\textbf{Backend} & Spring Boot, Node.js, Flask, Django, RESTful APIs, Microservices, JWT Authentication \\[4pt]
+\textbf{Cloud \& DevOps} & AWS (EC2, S3, Lambda, CloudFront, Route 53, RDS), Docker, GitHub Actions, CI/CD, Serverless \\[4pt]
+\textbf{Data \& AI} & PostgreSQL, OpenAI API, LLM Integration, Prompt Engineering, NLP \\[4pt]
 \textbf{Practices} & Agile/Scrum, Test-Driven Development, Git Version Control
 \end{tabularx}
 
@@ -181,6 +188,14 @@
 \sectionbox{Technical Projects}
 \smallersection
 
+
+\begin{projectentry}
+    \projicon{\faGlobe} \textbf{Mason Weddings \textemdash{} Client Marketing Website} \tech{HTML5, CSS3, JavaScript, GitHub Pages, EmailJS}
+\end{projectentry}
+\begin{projectdesc}
+    \item Built \href{https://masonweddings.com}{\textbf{7-page responsive marketing site}} from scratch for NYC wedding studio; custom DNS, automated HTTPS, CI/CD via GitHub Pages, and inquiry form with \textbf{EmailJS + Gmail OAuth}
+    \item Advanced CSS effects (parallax hover-blur, gradient overlays); optimized asset repo from \textbf{11 GB to ~400 MB}
+\end{projectdesc}
 
 \begin{projectentry}
     \projicon{\faDatabase} \textbf{Enterprise Inventory Management Platform} \tech{Java, SQL, JavaFX, MVC Architecture}
@@ -215,12 +230,9 @@
 \sectionbox{Certifications}
 \smallersection
 
-\noindent\textbf{AWS Certified Cloud Practitioner} \hfill 2023
+\noindent\textbf{AWS Certified Cloud Practitioner} \hfill 2023 \quad \textbf{CompTIA Project+} \hfill 2025
 
-\vspace{-2pt}
-\noindent\textbf{CompTIA Project+ Certification} \hfill 2025
-
-\vspace{2pt}
+\vspace{1pt}
 \noindent{\footnotesize\textit{Additional:} ITIL Foundation, CompTIA A+, Google IT Support Professional}
 
 \normalsizesection
